@@ -20,7 +20,7 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: JMR');
   });
-  
+
   // conn.on('connect', () => {
   //   setInterval(() => {
   //     conn.write('Move: left');   
@@ -30,4 +30,4 @@ const connect = function() {
   return conn;
 }
 
-module.exports = connect;
+module.exports = { connect };
