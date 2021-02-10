@@ -1,23 +1,25 @@
+const { msg } = require('./constants');
 let connection;
+const { mvmt } = require('./constants');
 const handUserInput = (data) => {
   if (data === '\u0003') {
     console.log("Ciao Bello!");
     process.exit();
   }
-  if (data === 'w') {
+  if (data === mvmt.up) {
     connection.write('Move: up');
     }
-  if (data === 'a') {
+  if (data === mvmt.left) {
     connection.write('Move: left');
   }
-  if (data === 's') {
+  if (data === mvmt.down) {
     connection.write('Move: down');
   }
-  if (data === 'd') {
+  if (data === mvmt.right) {
     connection.write('Move: right');
   }
   if (data === 'r') {
-    connection.write('Say: wubbalubbadubdub')
+    connection.write(`Say: ${msg}`)
   }
 };
 const setupInput = function(conn) {
