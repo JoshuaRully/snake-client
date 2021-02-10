@@ -20,6 +20,12 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: JMR');
   });
+  
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: left');   
+  //   }, 50)
+  // });
 
   return conn;
 }
